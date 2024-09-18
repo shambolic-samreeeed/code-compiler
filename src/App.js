@@ -1,11 +1,11 @@
 import React from 'react'
-import ModeSelector from './components/ModeSelector'
 import Header from './components/Header'
+import Home from './pages/Home'
 
 const App = () => {
   return (
-    <div className=''>
-      <Header/>
+    <div>
+      <Home/>
       
       
     </div>

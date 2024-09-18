@@ -18,22 +18,27 @@ const ModeSelector = () => {
   };
 
   const selectMode = (mode) => {
-    console.log(`selected ${mode}`)
+    console.log(`selected ${mode}`);
     setTheme(mode);
-    handleToggle(false)
+    handleToggle(false);
   };
 
   return (
-    <div className=' h-screen bg-white dark:bg-black dark:text-white text-center'>
-      <button onClick={handleToggle} className='mt-3'><CgDarkMode size='25px'/></button>
+    <div className='h-screen bg-white dark:bg-black dark:text-white text-end'>
+      <div className='relative inline-block'>
+        <button onClick={handleToggle}>
+          <CgDarkMode size='25px' color='#E9A530'/>
+        </button>
 
-      {showDropdown && (
-        <div className='bg-red-500 pl-10 pr-10 pt-5 pb-5 '>
-        <button onClick={() => selectMode('light')} className='ml-5 mr-5 text-center '>System</button> 
-          <button onClick={() => selectMode('light')} className='ml-5 mr-5 text-center  '>Light</button> 
-          <button onClick={() => selectMode('dark')} className='ml-5 mr-5 text-center ' >Dark</button>  
-        </div>
-      )}
+        {showDropdown && (
+          <div 
+            className='bg-[#E9A530] w-[150px] py-5 text-center rounded-lg absolute top-full left-1/2 transform -translate-x-1/2 mt-2 z-10'>
+            <button onClick={() => selectMode('system')} className='block px-4 py-2 text-black'>System</button>
+            <button onClick={() => selectMode('light')} className='block px-4 py-2 text-black'>Light</button>
+            <button onClick={() => selectMode('dark')} className='block px-4 py-2 text-black'>Dark</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
