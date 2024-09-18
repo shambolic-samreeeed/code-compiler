@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
         <Header/>
-        <CodeEditor />
+        <CodeEditor/>
     </div>
   )
 }
