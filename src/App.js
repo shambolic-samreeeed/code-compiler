@@ -4,10 +4,9 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-    <div>
+    <div className='dark:to-black'>
       <Home/>
-      
-      
+
     </div>
   )
 }

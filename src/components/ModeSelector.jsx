@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { CgDarkMode } from "react-icons/cg";
 
 const ModeSelector = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add('dark'); 
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('dark'); 
     }
   }, [theme]);
 
@@ -20,11 +20,11 @@ const ModeSelector = () => {
   const selectMode = (mode) => {
     console.log(`selected ${mode}`);
     setTheme(mode);
-    handleToggle(false);
+    setShowDropdown(false); 
   };
 
   return (
-    <div className='h-screen bg-white dark:bg-black dark:text-white text-end'>
+    <div className='text-end'>
       <div className='relative inline-block'>
         <button onClick={handleToggle}>
           <CgDarkMode size='25px' color='#E9A530'/>
